@@ -41,7 +41,8 @@ namespace PBL7.Controllers
         // GET: Times/Create
         public ActionResult Create()
         {
-            ViewBag.PatrocinadorId = new MultiSelectList(db.Patrocinadors, "PatrocinadorId", "Nome");
+            ViewBag.JogadorId = new MultiSelectList(db.Jogadors, "JogadorId", "Nome");
+            ViewBag.PatrocinadorId = new SelectList(db.Patrocinadors, "PatrocinadorId", "Nome");
             return View();
         }
         //Relatorio
@@ -51,7 +52,7 @@ namespace PBL7.Controllers
             times = db.Times.OrderByDescending(a => a.NumeroVitorias).ToList();
             var pdf = new ViewAsPdf
             {
-                ViewName = "RelatorioPatrocinadores",
+                ViewName = "RelatorioTimes",
                 IsGrayScale = true,
                 PageSize = Rotativa.Options.Size.A4,
                 Model = times.ToPagedList(1, times.Count())
@@ -78,7 +79,8 @@ namespace PBL7.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.PatrocinadorId = new MultiSelectList(db.Patrocinadors, "PatrocinadorId", "Nome");
+            ViewBag.JogadorId = new MultiSelectList(db.Jogadors, "PatrocinadorId", "Nome");
+            ViewBag.PatrocinadorId = new SelectList(db.Patrocinadors, "PatrocinadorId", "Nome");
             return View(time);
         }
 

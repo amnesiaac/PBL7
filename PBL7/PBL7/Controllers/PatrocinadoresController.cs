@@ -54,16 +54,18 @@ namespace PBL7.Controllers
         {
             if (ModelState.IsValid)
             {
-                List<Patrocinador> patrocinadores;
-                patrocinadores = db.Patrocinadors.Where(a => a.AreaAtuacao == PesquisaArea).ToList();
-
-                return RedirectToAction("RelatorioPatrocinadores" + patrocinadores);
+                
+                //return RedirectToAction("RelatorioPatrocinadores", "Patrocinador", new { patrocinadores = patrocinadores, area = "area" });
+                return RedirectToAction("RelatorioPatrocinadores");
             }
             return View();
         }
 
-        public ActionResult RelatorioPatrocinadores(List<Patrocinador> patrocinadores)
+        public ActionResult RelatorioPatrocinadores(string PesquisaArea)
         {
+            List<Patrocinador> patrocinadores;
+            patrocinadores = db.Patrocinadors.Where(a => a.AreaAtuacao == PesquisaArea).ToList();
+
             var pdf = new ViewAsPdf
             {
                 ViewName = "RelatorioPatrocinadores",

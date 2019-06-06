@@ -157,6 +157,10 @@
     <Compile Include="Migrations\201906060128467_[teste].Designer.cs">
       <DependentUpon>201906060128467_[teste].cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906061335572_[teste2].cs" />
+    <Compile Include="Migrations\201906061335572_[teste2].Designer.cs">
+      <DependentUpon>201906061335572_[teste2].cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Jogador.cs" />
     <Compile Include="Models\Match.cs" />
@@ -254,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906060128467_[teste].resx">
       <DependentUpon>201906060128467_[teste].cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906061335572_[teste2].resx">
+      <DependentUpon>201906061335572_[teste2].cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

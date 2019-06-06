@@ -7,7 +7,7 @@
 <h2>PesquisaArea</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("RelatorioPatrocinadores", "Patrocinadores", FormMethod.Get)) 
 {
     @Html.AntiForgeryToken()
     
