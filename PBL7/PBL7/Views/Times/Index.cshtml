@@ -1,0 +1,45 @@
+﻿@model IEnumerable<PBL7.Models.Time>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Patrocinador.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroVitorias)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Patrocinador.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroVitorias)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TimeId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TimeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TimeId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,38 @@
+﻿@model PBL7.Models.Patrocinador
+
+@{
+    ViewBag.Title = "PesquisaArea";
+}
+
+<h2>PesquisaArea</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Patrocinador</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    
+    <div class="col-md-10">
+        <input type="text" name="PesquisaArea" value="" placeholder="Digite aqui a area que deseja pesquisar" />
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
